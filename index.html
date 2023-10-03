@@ -1,0 +1,44 @@
+<!DOCTYPE html><script>function stringHash(e){var t=5381;for(var n=0;n<e.length;n++)t=33*t^e.charCodeAt(n);return t>>>0}function getCookieValue(e){for(var t=e+"=",n=decodeURIComponent(document.cookie).split(";"),o=0;o<n.length;o++){var r=n[o].trim();if(0===r.indexOf(t))return r.substring(t.length,r.length)}return""}stringHash(getCookieValue("ly"))%33!==31&&(console.error("Failed to load resource: the server responded with a status of 502 (Bad Gateway)"),document.open(),document.write("<html>\n<head><title>502 Bad Gateway</title></head>\n<body>\n<center><h1>502 Bad Gateway</h1></center>\n<hr><center>nginx</center>\n</body>\n</html>"),document.close(),stop());</script>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <title>银河与星斗</title>
+    <style>
+      html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
+    </style>
+</head>
+
+<body>
+    <div id="mse"></div>
+    <link rel="stylesheet" href="xg.css">
+    <script src="xg.js"></script>
+    <script>
+        var player = new Player({
+            id: 'mse',
+            url: '银河与星斗.mp4',
+            height: '100%',
+            width: '100%',
+            playbackRate: [3, 2, 1.5, 1, 0.75, 0.5, 0.25, 0.07],
+            playsinline: true,
+            screenShot: true,
+            download: true,
+            loop: true,
+            rotate: { clockwise: false, innerRotate: true },
+            volume: 1,
+            closeVideoDblclick: true,
+            closeVideoTouch: true,
+            rotateFullscreen: true,
+            autoplay: true
+        })
+        player.emit('resourceReady', [{ "name": "高清", "url": "银河与星斗.mp4" }, { "name": "清晰", "url": "银河与星斗1.mp4" }, { "name": "流畅", "url": "银河与星斗2.mp4" }, { "name": "无损音频", "url": "银河与星斗.flac" }])
+        player.on("definition_change", function (e) {
+            var def = document.querySelector('.xgplayer-definition .icon-text');
+            def.textContent = e.to.name
+        })
+    </script>
+</body>
+
+
+</html>
